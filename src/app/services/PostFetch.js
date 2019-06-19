@@ -1,20 +1,24 @@
-import { SinglePost } from "../pages/SinglePost"
+import { Post } from "../entities/PostEntity"
 
 
 
 const fetchPosts = () => {
-    return fetch('https://jsonplaceholder.typicode.com/posts')
+    return fetch('https://jsonplaceholder.typicode.com/posts?_limit=10')
         .then(response => response.json())
-        .then(postsArray => postsArray.map((post) => new Post(post.userId, post.title, post.body, post.id)))
+        .then(postsArray => postsArray.map((post) => new Post(post.userId, post.id, post.title, post.body)))
+
+
 }
+
 
 const fetchSinglePost = (id) => {
     return fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
         .then(response => response.json())
-        .then(postObject => new Post(postObject.userId, postObject.title, postObject.body, postObject.id))
+        .then(postObj => new Post(postObj.userId, postObj.id, postObj.title, postObj.body))
 }
 
 export {
     fetchPosts,
     fetchSinglePost
+
 }

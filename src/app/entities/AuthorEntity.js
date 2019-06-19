@@ -12,7 +12,8 @@ class Author {
         this.zipCode = address.zipcode;
         this.company = company.name;
         this.slogan = company.catchPhrase;
-
+        this.lat = address.geo.lat;
+        this.lng = address.geo.lng;
     }
 }
 
