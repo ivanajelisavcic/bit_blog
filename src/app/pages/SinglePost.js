@@ -13,7 +13,7 @@ class SinglePost extends React.Component {
         this.state = {
             author: {},
             post: [],
-            authorPosts: []
+            chosenAuthorPosts: []
         }
     }
 
@@ -41,20 +41,34 @@ class SinglePost extends React.Component {
     }
 
 
+    renderThreeMorePosts(posts) {
+        return posts.slice(1, 4)
+            .map((post) => {
+                return (
+                    <li>
+                        {post.title}
+                    </li>
+                )
+            })
+    }
+
 
 
     render() {
         return (
 
             <>
-                <Link to='/'>
-                </Link>
+
                 <h2>{this.state.post.title}</h2>
-                <h4><Link to={`/author/${this.state.post.userId}`}>{this.state.author.name}</Link></h4>
+                <h4><Link to={`/authors/${this.state.author.id}`}>{this.state.author.name}</Link></h4>
                 <p>{this.state.post.body}</p>
                 <hr></hr>
-
                 <h5>3 more posts from same author:</h5>
+                <ul>
+                    {this.renderThreeMorePosts(this.state.chosenAuthorPosts)}
+
+                </ul>
+
 
             </>
         );
@@ -64,6 +78,20 @@ class SinglePost extends React.Component {
 
 
 export { SinglePost }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
