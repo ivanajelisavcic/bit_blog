@@ -18,16 +18,17 @@ body {
   }
 
 header {
+  position: relative;
   background-color:rgb(171, 226, 223);
-  height: 90px;
+  height:130px;
   color: lightslategray;
   text-align: right;
-  padding: 20px;
+  padding: 10px;
 }
 
 footer {
   display:block;
-  height: 90px;
+  height: 130px;
   bottom: 0;
   width: 100%;
   background-color: rgb(171, 226, 223);
@@ -44,11 +45,50 @@ footer {
   }
 
  h1 {
-   text-align: center;
-   padding-top: 20px;
+   text-align: center;   
+   padding-top: 40px;
+   padding-bottom: 40px;
  }
 
  h2 {
   text-align: center;
   padding-top: 20px;
+}
+
+.homePagePosts {
+  margin: 35px;
+ 
+}
+
+.navbar {
+  height: 100px;
+  margin:20px;
+  size: 50px;
+ 
+
+}
+
+.navPages {
+  font-size: 23px;
+  margin-left: 15px;
+}
+
+.border-right {
+  padding: 10px;
+  border-color: lightslategray;
+}
+
+.authorImage {
+  height: 180px;
+  width: 150px;
+}
+
+.map {
+  height: 350px;
+  width: 350px;
+  display: i
+}
+
+.allAuthorsURL {
+  
 }

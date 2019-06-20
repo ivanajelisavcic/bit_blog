@@ -3,7 +3,7 @@ import { Post } from "../entities/PostEntity"
 
 
 const fetchPosts = () => {
-    return fetch('https://jsonplaceholder.typicode.com/posts?_limit=10')
+    return fetch('https://jsonplaceholder.typicode.com/posts?_limit=5')
         .then(response => response.json())
         .then(postsArray => postsArray.map((post) => new Post(post.userId, post.id, post.title, post.body)))
 

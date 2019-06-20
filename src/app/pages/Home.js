@@ -32,7 +32,7 @@ class Home extends React.Component {
 
                 <h1>POSTS</h1>
                 {this.state.posts.map(post => (
-                    <div>
+                    <div className="homePagePosts">
                         <h3><Link to={`/single_post/${post.id}`}>{post.title}</Link></h3>
                         <p>{post.body}</p>
 

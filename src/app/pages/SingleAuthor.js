@@ -35,15 +35,16 @@ class SingleAuthor extends React.Component {
         const lgt = 20.4489
         return (
             <>
-                <Link to='/authors'>All authors</Link>
+                <Link to='/authors' className="allAuthorsURL">All authors</Link>
                 <h1>Single Author</h1>
-
-                <div>
+                <hr></hr>
+                <div className="singleAuthor1stDiv">
                     <h4>Name Surname: {this.state.author.name}</h4>
                     <p>username: {this.state.author.username}</p>
                     <p>email: {this.state.author.email}</p>
                     <p>phone: {this.state.author.phone}</p>
-                    <img src="" alt="author"></img>
+                    <span className="image">
+                        <img src="https://www.lagnakarya.com/assets/images/person-placeholder.jpg" alt="author" className="authorImage"></img></span>
                 </div>
 
                 <hr></hr>
@@ -53,7 +54,7 @@ class SingleAuthor extends React.Component {
                     <p>street: {this.state.author.street}</p>
                     <p>city: {this.state.author.city}</p>
                     <p>zipcode: {this.state.author.zipCode}</p>
-                    {<iframe
+                    {<iframe className="map"
                         width="100%"
                         height="100%"
                         scrolling="no"
@@ -76,6 +77,7 @@ class SingleAuthor extends React.Component {
                     <p>name: {this.state.author.company} </p>
                     <p>slogan: {this.state.author.slogan}</p>
                 </div>
+
 
 
             </>
