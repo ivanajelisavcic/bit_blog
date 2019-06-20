@@ -13,59 +13,49 @@ class SinglePost extends React.Component {
         this.state = {
             author: {},
             post: [],
-            authorPosts: []         
-            }
+            authorPosts: []
+        }
     }
 
-    fetchAllAuthorAndPostDetails () {
+    fetchAllAuthorAndPostDetails() {
 
         fetchSinglePost(this.props.match.params.id).then((post) => {
             this.setState({
-                post : post
-})
-fetchSingleAuthor(post.userId).then((author) => {
-    this.setState({
-        author : author
-    })
-}) 
-fetchPostsForChosenAuthor(post.userId).then((chosenAuthorPosts) => {
-    this.setState({
-        chosenAuthorPosts : chosenAuthorPosts
-    })
-})
-})
-}
-
-componentDidMount() {
-    this.fetchAllAuthorAndPostDetails()
-}
-
-componentDidUpdate(prevProps) {
-    if (prevProps.match.params.id !== this.props.match.params.id) {
-        fetchSinglePost(this.props.match.params.id).then((post) => {
-            this.setState({
-                post
+                post: post
+            })
+            fetchSingleAuthor(post.userId).then((author) => {
+                this.setState({
+                    author: author
+                })
+            })
+            fetchPostsForChosenAuthor(post.userId).then((chosenAuthorPosts) => {
+                this.setState({
+                    chosenAuthorPosts: chosenAuthorPosts
+                })
             })
         })
     }
-}
+
+    componentDidMount() {
+        this.fetchAllAuthorAndPostDetails()
+    }
 
 
-render() {
-    return (
 
-     <>
+
+    render() {
+        return (
+
+            <>
                 <Link to='/'>
-                                    </Link>
+                </Link>
                 <h2>{this.state.post.title}</h2>
                 <h4><Link to={`/author/${this.state.post.userId}`}>{this.state.author.name}</Link></h4>
                 <p>{this.state.post.body}</p>
                 <hr></hr>
 
                 <h5>3 more posts from same author:</h5>
-                <ul>
-                    {this.renderMorePosts(this.state.authorPosts)}
-                </ul>
+
             </>
         );
     }
